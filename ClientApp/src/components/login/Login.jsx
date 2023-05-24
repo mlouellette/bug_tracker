@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./login.module.css";
 import bug from "../assets/bug.png";
 import Button from "react-bootstrap/Button";
-import db from "../fakedb/db.js"
+import {db} from "../fakedb/db.js"
 import { useNavigate } from 'react-router-dom';
 
 function Login() {

@@ -20,7 +20,7 @@ p {
     text-align:center;
 }
 
-form {
+.loginForm {
     display: flex;
     flex-direction: column;
     color: #FFFFFF;

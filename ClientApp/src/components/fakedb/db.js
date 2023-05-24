@@ -1,4 +1,4 @@
-const db = [
+export const db = [
     {
         id: 1,
         name: 'John Doe',
@@ -36,4 +36,37 @@ const db = [
     }
 ]
 
-export default db
+export const projectData = [
+    {
+        id: 1,
+        projects: "Project Alpha",
+        description: "This is a description for Project Alpha",
+        contributor_name: "Contributor One"
+    },
+    {
+        id: 2,
+        projects: "Project Beta",
+        description: "This is a description for Project Beta",
+        contributor_name: "Contributor Two"
+    },
+    {
+        id: 3,
+        projects: "Project Gamma",
+        description: "This is a description for Project Gamma",
+        contributor_name: "Contributor Three"
+    },
+    {
+        id: 4,
+        projects: "Project Delta",
+        description: "This is a description for Project Delta",
+        contributor_name: "Contributor Four"
+    },
+    {
+        id: 5,
+        projects: "Project Epsilon",
+        description: "This is a description for Project Epsilon",
+        contributor_name: "Contributor Five"
+    }
+];
+
+

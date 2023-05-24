@@ -10,6 +10,8 @@ import Home  from './components/home/Home.jsx';
 
 import TopNav from './components/topNav/TopNav.jsx';
 import SideNavbar from './components/sideNav/SideNavbar.jsx';
+import ProjectList from './components/projectList/ProjectList.jsx';
+import PieCharts from './components/pieCharts/PieCharts.tsx';
 
 function App() {
   return (
@@ -18,6 +20,9 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/topnav" element={<TopNav />} />
         <Route path="/sidenav" element={<SideNavbar />} />
+        <Route path="/projectlist" element={<ProjectList />} />
+
+        <Route path="/piechart" element={<PieCharts />} />
       </Routes>
     
   ) 
