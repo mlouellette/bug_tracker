@@ -12,6 +12,7 @@ import TopNav from './components/topNav/TopNav.jsx';
 import SideNavbar from './components/sideNav/SideNavbar.jsx';
 import ProjectList from './components/projectList/ProjectList.jsx';
 import PieCharts from './components/pieCharts/PieCharts.tsx';
+import TicketList from './components/ticketList/TicketList.jsx';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/topnav" element={<TopNav />} />
         <Route path="/sidenav" element={<SideNavbar />} />
         <Route path="/projectlist" element={<ProjectList />} />
+        <Route path="/ticketlist" element={<TicketList />} />
 
         <Route path="/piechart" element={<PieCharts />} />
       </Routes>

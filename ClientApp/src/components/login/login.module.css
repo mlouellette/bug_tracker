@@ -5,7 +5,7 @@
     flex-direction: column;
     width: 100vw;
     height: 100vh;
-    background-color: #F1F1F1;
+    background-color: #383838;
 }
 
 .content {
@@ -23,12 +23,12 @@ p {
 .loginForm {
     display: flex;
     flex-direction: column;
-    color: #FFFFFF;
+    color: #383838;
     width: 50%;
     max-width: 500px;
-    background-color: #008080;
+    background-color: #FFFFFF;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); 
-    border: 3px solid seashell; 
+    border: 3px solid rgba(0, 0, 0, 0.2); 
     border-radius: 15px;
     padding: 5%;
     font-family: Arial, sans-serif; 

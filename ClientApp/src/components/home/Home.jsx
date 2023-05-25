@@ -3,20 +3,36 @@ import TopNav from '../../components/topNav/TopNav.jsx';
 import SideNavbar from '../../components/sideNav/SideNavbar.jsx';
 import ProjectList from '../../components/projectList/ProjectList.jsx'
 import PieCharts from '../../components/pieCharts/PieCharts.tsx'
+import Footer from '../../components/footer/Footer.jsx'
+import styles from "./home.module.css";
 
-export default function Home(){
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
+
+export default function Home() {
     return (
-        <>
-           <TopNav/>
-           <SideNavbar/> 
-           <div style={{position:'absolute', left:'20%', top:'13%', width:'18%', height:'25%'}}>
+      <div>
+        <TopNav />
+          <SideNavbar className={styles.sideNavbar} />
+        <div className={styles.contentWrapper}>
+          <MDBContainer>
+            <MDBRow>
+
+              <MDBCol size="3" className={styles.pieChartsContainer}>
                 <PieCharts />
-            </div>
-           <div style={{position:'absolute',top:'13%',right:'10%', width:'50%', height:'25%'}}>
-           <ProjectList />
-           </div>
-        </>
-    )
+              </MDBCol>
+              <MDBCol size="1"></MDBCol>
 
-}
+              <MDBCol size="8" className={styles.projectListContainer}>
+              
+                <ProjectList />
+              </MDBCol>
+            </MDBRow>
+          </MDBContainer>
+        </div>
 
+
+        <Footer />
+
+      </div>
+    );
+  }

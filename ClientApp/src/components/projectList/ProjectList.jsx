@@ -6,6 +6,8 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 
+import { MDBDataTable, MDBBtn } from 'mdbreact';
+
 function ProjectList() {
   const [projects, setProjects] = useState([]);
 
@@ -13,6 +15,30 @@ function ProjectList() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const data = {
+    columns: [
+      {
+        label: 'Projects',
+        field: 'projects',
+        sort: 'asc',
+        width: 150
+      },
+      {
+        label: 'Description',
+        field: 'description',
+        sort: 'asc',
+        width: 270
+      },
+      {
+        label: 'Contributor_name',
+        field: 'contributor_name',
+        sort: 'asc',
+        width: 200
+      }
+    ],
+    rows: projectData
+  }
 
   // Fetch database
   useEffect(() => {
@@ -51,33 +77,22 @@ function ProjectList() {
   }
 
   return (
-    <div>
-      <Table striped bordered hover>
-        <thead>
-          <tr>
-            <th>
-              <center>PROJECTS LIST</center>
-            </th>
-            <th></th>
-            <th>
-              <center>
-                {" "}
-                <Button onClick={handleShow} variant="danger" size="lg">
-                  Create New
-                </Button>
-              </center>
-            </th>
-          </tr>
-        </thead>
-        <thead>
-          <tr>
-            <th>PROJECTS</th>
-            <th>DESCRIPTION</th>
-            <th>CONTRIBUTORS</th>
-          </tr>
-        </thead>
-        <tbody>{List()}</tbody>
-      </Table>
+    <div style={{postition:"relative", zIndex:1}}>
+    <center><h1>Ticket list</h1></center>
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <Button variant="primary" onClick={handleShow}>
+                Create new
+            </Button>
+        </div>
+        <MDBDataTable
+          responsive
+          striped
+          bordered
+          small
+          data={data}
+          style={{ backgroundColor: "white" }}
+        />
+
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

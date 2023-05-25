@@ -93,7 +93,7 @@ export default function PieCharts() {
     return (
     <div style={{maxHeight:"1%"}}>
         <Card>
-        <Card.Header>Tickets by Type</Card.Header>
+        <Card.Header style={{backgroundColor: '#FF7630'}} className="text-light bg-gradient">Tickets by Type</Card.Header>
         <Card.Body>
 
           <Card.Text>
@@ -120,7 +120,7 @@ export default function PieCharts() {
       </Card>
       <br />
     <Card>
-    <Card.Header>Tickets by Priority</Card.Header>
+    <Card.Header style={{backgroundColor: '#FF7630'}} className="text-light bg-gradient">Tickets by Priority</Card.Header>
     <Card.Body>
 
     <Card.Text>
@@ -147,7 +147,7 @@ export default function PieCharts() {
     </Card>
     <br />
     <Card>
-    <Card.Header>Tickets by Status</Card.Header>
+    <Card.Header style={{backgroundColor: '#FF7630'}} className="text-light bg-gradient">Tickets by Status</Card.Header>
     <Card.Body>
 
     <Card.Text>

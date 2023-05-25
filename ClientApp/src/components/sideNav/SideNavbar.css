@@ -1,0 +1,9 @@
+    div .sidenav {
+        position: fixed; 
+        top: 0 !important;
+        bottom: 0 !important;    
+        background-color: #383838;
+        height: 100vh;
+        z-index: 5;
+    }
+

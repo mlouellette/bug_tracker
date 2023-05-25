@@ -65,7 +65,7 @@ function Login() {
                 <label>Password</label>
                 <input onChange={e => setPassword(e.target.value)} value={password} type="password" />
 
-                <Button className="mt-5" variant="danger" type="submit">
+                <Button className="mt-5" style={{backgroundColor:"rgba(255, 118, 48, 1)"}} variant="danger" type="submit">
                   Submit
                 </Button>
               </div>
