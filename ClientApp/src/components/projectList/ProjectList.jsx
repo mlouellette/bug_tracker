@@ -16,29 +16,25 @@ function ProjectList() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const data = {
-    columns: [
+  const data = [
+
       {
         label: 'Projects',
         field: 'projects',
-        sort: 'asc',
         width: 150
       },
       {
         label: 'Description',
         field: 'description',
-        sort: 'asc',
         width: 270
       },
       {
         label: 'Contributor_name',
         field: 'contributor_name',
-        sort: 'asc',
         width: 200
       }
-    ],
-    rows: projectData
-  }
+
+  ]
 
   // Fetch database
   useEffect(() => {
@@ -49,36 +45,16 @@ function ProjectList() {
     getProjects();
   }, []);
 
-  const Project = (props) => (
-    <tr>
-      <td>{props.project.projects}</td>
-      <td>{props.project.description}</td>
-      <td>{props.project.contributor_name}</td>
-    </tr>
-  );
 
-  // NOT IMPLEMENTED YET This method will delete a project
-  function deleteProject(id) {
-    const newProjects = projects.filter((el) => el.id !== id);
-    setProjects(newProjects);
-  }
-
-  // This method will map out the projects on the table
-  function List() {
-    return projects.map((project) => {
-      return (
-        <Project
-          project={project}
-          deleteProject={() => deleteProject(project.id)}
-          key={project.id}
-        />
-      );
-    });
-  }
+  // // NOT IMPLEMENTED YET This method will delete a project
+  // function deleteProject(id) {
+  //   const newProjects = projects.filter((el) => el.id !== id);
+  //   setProjects(newProjects);
+  // }
 
   return (
     <div style={{postition:"relative", zIndex:1}}>
-    <center><h1>Ticket list</h1></center>
+    <center><h1>Project list</h1></center>
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Button variant="primary" onClick={handleShow}>
                 Create new

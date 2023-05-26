@@ -13,6 +13,7 @@ import SideNavbar from './components/sideNav/SideNavbar.jsx';
 import ProjectList from './components/projectList/ProjectList.jsx';
 import PieCharts from './components/pieCharts/PieCharts.tsx';
 import TicketList from './components/ticketList/TicketList.jsx';
+import Ticket from './components/ticket/Ticket.jsx';
 
 function App() {
   return (
@@ -23,8 +24,8 @@ function App() {
         <Route path="/sidenav" element={<SideNavbar />} />
         <Route path="/projectlist" element={<ProjectList />} />
         <Route path="/ticketlist" element={<TicketList />} />
-
         <Route path="/piechart" element={<PieCharts />} />
+        <Route path="/ticket" element={<Ticket />} />
       </Routes>
     
   ) 

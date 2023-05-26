@@ -1,10 +1,12 @@
 import Table from "react-bootstrap/Table";
-import { projectData } from "../fakedb/db.js";
 import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
+import {projectData} from "../fakedb/db.js";
 
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
+
+import styles from './ticketList.module.css';
 
 import { MDBDataTable, MDBBtn } from 'mdbreact';
 
@@ -16,177 +18,14 @@ function TicketList() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const data = {
-    columns: [
-      {
-        label: 'Name',
-        field: 'name',
-        sort: 'asc',
-        width: 150
-      },
-      {
-        label: 'Position',
-        field: 'position',
-        sort: 'asc',
-        width: 270
-      },
-      {
-        label: 'Office',
-        field: 'office',
-        sort: 'asc',
-        width: 200
-      },
-      {
-        label: 'Age',
-        field: 'age',
-        sort: 'asc',
-        width: 100
-      },
-      {
-        label: 'Start date',
-        field: 'date',
-        sort: 'asc',
-        width: 150
-      },
-      {
-        label: 'Salary',
-        field: 'salary',
-        sort: 'asc',
-        width: 100
-      }
-    ],
-    rows: [
-      {
-        name: 'Tiger Nixon',
-        position: 'System Architect',
-        office: 'Edinburgh',
-        age: '61',
-        date: '2011/04/25',
-        salary: '$320'
-      },
-      {
-        name: 'Garrett Winters',
-        position: 'Accountant',
-        office: 'Tokyo',
-        age: '63',
-        date: '2011/07/25',
-        salary: '$170'
-      },
-      {
-        name: 'Ashton Cox',
-        position: 'Junior Technical Author',
-        office: 'San Francisco',
-        age: '66',
-        date: '2009/01/12',
-        salary: '$86'
-      },
-      {
-        name: 'Cedric Kelly',
-        position: 'Senior Javascript Developer',
-        office: 'Edinburgh',
-        age: '22',
-        date: '2012/03/29',
-        salary: '$433'
-      },
-      {
-        name: 'Airi Satou',
-        position: 'Accountant',
-        office: 'Tokyo',
-        age: '33',
-        date: '2008/11/28',
-        salary: '$162'
-      },
-      {
-        name: 'Brielle Williamson',
-        position: 'Integration Specialist',
-        office: 'New York',
-        age: '61',
-        date: '2012/12/02',
-        salary: '$372'
-      },
-      {
-        name: 'Herrod Chandler',
-        position: 'Sales Assistant',
-        office: 'San Francisco',
-        age: '59',
-        date: '2012/08/06',
-        salary: '$137'
-      },
-      {
-        name: 'Rhona Davidson',
-        position: 'Integration Specialist',
-        office: 'Tokyo',
-        age: '55',
-        date: '2010/10/14',
-        salary: '$327'
-      },
-      {
-        name: 'Colleen Hurst',
-        position: 'Javascript Developer',
-        office: 'San Francisco',
-        age: '39',
-        date: '2009/09/15',
-        salary: '$205'
-      },
-      {
-        name: 'Rhona Davidson',
-        position: 'Integration Specialist',
-        office: 'Tokyo',
-        age: '55',
-        date: '2010/10/14',
-        salary: '$327'
-      },
-      {
-        name: 'Colleen Hurst',
-        position: 'Javascript Developer',
-        office: 'San Francisco',
-        age: '39',
-        date: '2009/09/15',
-        salary: '$205'
-      },
-      {
-        name: 'Rhona Davidson',
-        position: 'Integration Specialist',
-        office: 'Tokyo',
-        age: '55',
-        date: '2010/10/14',
-        salary: '$327'
-      },
-      {
-        name: 'Colleen Hurst',
-        position: 'Javascript Developer',
-        office: 'San Francisco',
-        age: '39',
-        date: '2009/09/15',
-        salary: '$205'
-      },
-      {
-        name: 'Rhona Davidson',
-        position: 'Integration Specialist',
-        office: 'Tokyo',
-        age: '55',
-        date: '2010/10/14',
-        salary: '$327'
-      },
-      {
-        name: 'Colleen Hurst',
-        position: 'Javascript Developer',
-        office: 'San Francisco',
-        age: '39',
-        date: '2009/09/15',
-        salary: '$205'
-      }
-    ]
-  };
+  // // Fetch database
+  // useEffect(() => {
+  //   function getProjects() {
+  //     setProjects(projectData);
+  //   }
 
-  // Fetch database
-  useEffect(() => {
-    function getProjects() {
-      setProjects(projectData);
-    }
-
-    getProjects();
-  }, []);
+  //   getProjects();
+  // }, []);
 
   const Project = (props) => (
     <tr>
@@ -224,13 +63,15 @@ function TicketList() {
             </Button>
         </div>
         <MDBDataTable
-            scrollY
-            maxHeight="200px"
-            striped
-            bordered
-            small
-            data={data}
-            />
+          className={styles.myCustomTable}
+          scrollY
+          maxHeight="200px"
+          maxWidth="200px"
+          striped
+          bordered
+          small
+          data={projectData}
+        />
 
 
       <Modal show={show} onHide={handleClose}>

@@ -13,7 +13,7 @@ export default function TopNav(props) {
 
     return (
         <>
-            <Navbar class="text-light" style={{height: 300}} className={styles.mainNav}>
+            <Navbar style={{height: 300}} className={styles.mainNav}>
                     <Container>
                     <Navbar.Brand style={{top:0, position:"absolute"}} href="#home">
                       <img style={{top:0, width:"10%", padding:5}} src={bug} />
