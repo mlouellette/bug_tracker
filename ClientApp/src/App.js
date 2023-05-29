@@ -14,6 +14,7 @@ import ProjectList from './components/projectList/ProjectList.jsx';
 import PieCharts from './components/pieCharts/PieCharts.tsx';
 import TicketList from './components/ticketList/TicketList.jsx';
 import Ticket from './components/ticket/Ticket.jsx';
+import TeamTable from './components/teamTable/TeamTable.jsx';
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
         <Route path="/projectlist" element={<ProjectList />} />
         <Route path="/ticketlist" element={<TicketList />} />
         <Route path="/piechart" element={<PieCharts />} />
-        <Route path="/ticket" element={<Ticket />} />
+        <Route path="/tickets" element={<Ticket />} />
+        <Route path="/teamtable" element={<TeamTable />} />
       </Routes>
     
   ) 

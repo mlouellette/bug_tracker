@@ -37,166 +37,128 @@ export const db = [
 ]
 
 export const projectData = {
-    columns: [
-      {
-        label: 'Name',
-        field: 'name',
-        sort: 'asc',
-        width: 150
-      },
-      {
-        label: 'Position',
-        field: 'position',
-        sort: 'asc',
-        width: 270
-      },
-      {
-        label: 'Office',
-        field: 'office',
-        sort: 'asc',
-        width: 200
-      },
-      {
-        label: 'Age',
-        field: 'age',
-        sort: 'asc',
-        width: 100
-      },
-      {
-        label: 'Start date',
-        field: 'date',
-        sort: 'asc',
-        width: 150
-      },
-      {
-        label: 'Salary',
-        field: 'salary',
-        sort: 'asc',
-        width: 100
-      }
-    ],
-    rows: [
-      {
-        name: 'Tiger Nixon',
-        position: 'System Architect',
-        office: 'Edinburgh',
-        age: '61',
-        date: '2011/04/25',
-        salary: '$320'
-      },
-      {
-        name: 'Garrett Winters',
-        position: 'Accountant',
-        office: 'Tokyo',
-        age: '63',
-        date: '2011/07/25',
-        salary: '$170'
-      },
-      {
-        name: 'Ashton Cox',
-        position: 'Junior Technical Author',
-        office: 'San Francisco',
-        age: '66',
-        date: '2009/01/12',
-        salary: '$86'
-      },
-      {
-        name: 'Cedric Kelly',
-        position: 'Senior Javascript Developer',
-        office: 'Edinburgh',
-        age: '22',
-        date: '2012/03/29',
-        salary: '$433'
-      },
-      {
-        name: 'Airi Satou',
-        position: 'Accountant',
-        office: 'Tokyo',
-        age: '33',
-        date: '2008/11/28',
-        salary: '$162'
-      },
-      {
-        name: 'Brielle Williamson',
-        position: 'Integration Specialist',
-        office: 'New York',
-        age: '61',
-        date: '2012/12/02',
-        salary: '$372'
-      },
-      {
-        name: 'Herrod Chandler',
-        position: 'Sales Assistant',
-        office: 'San Francisco',
-        age: '59',
-        date: '2012/08/06',
-        salary: '$137'
-      },
-      {
-        name: 'Rhona Davidson',
-        position: 'Integration Specialist',
-        office: 'Tokyo',
-        age: '55',
-        date: '2010/10/14',
-        salary: '$327'
-      },
-      {
-        name: 'Colleen Hurst',
-        position: 'Javascript Developer',
-        office: 'San Francisco',
-        age: '39',
-        date: '2009/09/15',
-        salary: '$205'
-      },
-      {
-        name: 'Rhona Davidson',
-        position: 'Integration Specialist',
-        office: 'Tokyo',
-        age: '55',
-        date: '2010/10/14',
-        salary: '$327'
-      },
-      {
-        name: 'Colleen Hurst',
-        position: 'Javascript Developer',
-        office: 'San Francisco',
-        age: '39',
-        date: '2009/09/15',
-        salary: '$205'
-      },
-      {
-        name: 'Rhona Davidson',
-        position: 'Integration Specialist',
-        office: 'Tokyo',
-        age: '55',
-        date: '2010/10/14',
-        salary: '$327'
-      },
-      {
-        name: 'Colleen Hurst',
-        position: 'Javascript Developer',
-        office: 'San Francisco',
-        age: '39',
-        date: '2009/09/15',
-        salary: '$205'
-      },
-      {
-        name: 'Rhona Davidson',
-        position: 'Integration Specialist',
-        office: 'Tokyo',
-        age: '55',
-        date: '2010/10/14',
-        salary: '$327'
-      },
-      {
-        name: 'Colleen Hurst',
-        position: 'Javascript Developer',
-        office: 'San Francisco',
-        age: '39',
-        date: '2009/09/15',
-        salary: '$205'
-      }
-    ]
-  };
+  columns: [
+    {
+      label: 'Project',
+      field: 'project',
+      sort: 'asc',
+      width: 150
+    },
+    {
+      label: 'Description',
+      field: 'description',
+      sort: 'asc',
+      width: 270
+    },
+    {
+      label: 'Contributors',
+      field: 'contributors',
+      sort: 'asc',
+      width: 200
+    },
+    {
+      label: 'Start date',
+      field: 'startDate',
+      sort: 'asc',
+      width: 150
+    },
+    {
+      label: 'Actions',
+      field: 'actions',
+      sort: 'asc',
+      width: 100
+    }
+  ],
+  rows: [
+    {
+      project: 'Project 1',
+      description: 'System development',
+      contributors: 'John Doe',
+      startDate: '2011/04/25',
+    },
+    {
+      project: 'Project 2',
+      description: 'Web design',
+      contributors: 'Jane Smith',
+      startDate: '2011/07/25',
+    },
+    {
+      project: 'Project 3',
+      description: 'App development',
+      contributors: 'Alice Johnson',
+      startDate: '2009/01/12',
+    },
+    {
+      project: 'Project 4',
+      description: 'Software Testing',
+      contributors: 'Bob Williams',
+      startDate: '2012/03/29',
+    }
 
+  ]
+};
 
+export const ticketData = {
+  columns: [
+    {
+      label: 'Title',
+      field: 'title',
+      sort: 'asc',
+      width: 200
+    },
+    {
+      label: 'Description',
+      field: 'description',
+      sort: 'asc',
+      width: 350
+    },
+    {
+      label: 'Author',
+      field: 'author',
+      sort: 'asc',
+      width: 150
+    },
+    {
+      label: 'Date',
+      field: 'date',
+      sort: 'asc',
+      width: 150
+    },
+    {
+      label: 'Info',
+      field: 'info',
+      sort: 'asc',
+      width: 100
+    }
+  ],
+  rows: [
+    {
+      title: 'Ticket 1',
+      description: 'This is the description for ticket 1',
+      author: 'John Doe',
+      date: '2023/05/01',
+
+    },
+    {
+      title: 'Ticket 2',
+      description: 'This is the description for ticket 2',
+      author: 'Jane Smith',
+      date: '2023/05/15',
+
+    },
+    {
+      title: 'Ticket 3',
+      description: 'This is the description for ticket 3',
+      author: 'Alice Johnson',
+      date: '2023/06/20',
+
+    },
+    {
+      title: 'Ticket 4',
+      description: 'This is the description for ticket 4',
+      author: 'Bob Williams',
+      date: '2023/04/29',
+
+    }
+  ]
+};

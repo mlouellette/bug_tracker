@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./login.module.css";
 import bug from "../assets/bug.png";
 import Button from "react-bootstrap/Button";
@@ -13,6 +13,10 @@ function Login() {
   const [age, setAge] = useState("");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    localStorage.removeItem('name')
+  }, []);
+
   const handleChange = () => {
     setAccount(account == "signup" ? "signin" : "signup");
   };
@@ -20,8 +24,10 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     const emails = db.filter(e => e.email === email)
+    const name = emails[0].name;
     
     if (emails.length > 0) {
+      localStorage.setItem("name", name);
       navigate('/home')
     } else {
       alert("this email doesnt exist!")
