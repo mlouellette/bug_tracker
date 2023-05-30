@@ -11,8 +11,10 @@ import ModalProject from "../modalProject/ModalProject.jsx";
 import ProjectList from "../projectList/ProjectList.jsx"
 import {ticketData} from "../fakedb/db.js"
 import TeamTable from "../teamTable/TeamTable.jsx"
+import styles from "./userTicket.module.css";
+import { useNavigate } from 'react-router-dom';
 
-import styles from "./ticket.module.css";
+
 import Table from "react-bootstrap/Table";
 
 import Button from "react-bootstrap/Button";
@@ -32,11 +34,13 @@ import {
   MDBRow,
 } from "mdb-react-ui-kit";
 
-export default function Ticket() {
+export default function UserTicket() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const navigate = useNavigate()
 
   const handleToggle = () => {
     if (show === false) {
@@ -67,42 +71,31 @@ export default function Ticket() {
       <div className={styles.contentWrapper}>
         <MDBContainer>
           <MDBRow>
-          {/* -------------------------- upper row ----------------------------  */}
-            <MDBCol size="3">
-            <div style={{position: 'relative', marginTop: '-4rem'}}>
 
-              <ModalTicket />
-              <div className="mt-3">
-                <TeamTable />
-              </div>
-             </div> 
-            </MDBCol>
-
-            <MDBCol size="1"></MDBCol>
-
-            <MDBCol size="8">
-              <ProjectList buttonAction={
-                                  {
-                    columns: tickets.columns,
-                    rows: tickets.rows.map(row => ({
-                      ...row,
-                      info: <center><button style={{backgroundColor: '#FF7630'}} onClick={handleToggle} className="btn btn-primary">. . .</button></center>,
-                    }))
-                  }
-              } className="bg-white" title="Project's ticket list" />
-            </MDBCol>
-
-          {/* -------------------------- lower row ----------------------------  */}
-
-            <MDBCol className="mt-5" size="12">
-              {show && <InfoCard show={show} onHide={handleClose} />}
-
+            <MDBCol size="12">
+            <ProjectList 
+                    buttonAction={
+                    {
+                        columns: tickets.columns,
+                        rows: tickets.rows
+                        .filter(row => row.author === localStorage.getItem('name'))
+                        .map(row => ({
+                            ...row,
+                            info: <center><button style={{backgroundColor: '#FF7630'}} onClick={() => navigate('/tickets')} className="btn btn-primary">. . .</button></center>,
+                        }))
+                    }
+                    } 
+                    className="bg-white" 
+                    title={`${localStorage.getItem('name') ? localStorage.getItem('name') : "name"}'s Ticket List`}
+                />
             </MDBCol>
  
               </MDBRow>
             </MDBContainer>
           </div>
-          <Footer />
+          <div style={{bottom:-600}}>
+            <Footer  />
+          </div>
         </div>
       );
 }

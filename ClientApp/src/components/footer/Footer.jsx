@@ -10,11 +10,11 @@ export default function Footer() {
                 backgroundColor: 'rgba(0, 0, 0, 0.05)',
                 position: 'relative',
                 bottom: -140,
-                width: '100%'
+                height: '100%'
             }}
         >
             © 2023 Copyright:
-            <a className='text-reset fw-bold' href='https://mdbootstrap.com/'>
+            <a className='text-reset fw-bold' href='#'>
             mlouellette.dev
             </a>
         </div>

@@ -35,7 +35,7 @@ export default function SideNavbar() {
             </NavIcon>
             <NavText>Home</NavText>
           </NavItem>
-          <NavItem eventKey="tickets">
+          <NavItem eventKey="userticket">
             <NavIcon>
               <i
                 className="fa far-regular fa-ticket"
@@ -44,7 +44,7 @@ export default function SideNavbar() {
             </NavIcon>
             <NavText>Tickets</NavText>
           </NavItem>
-          <NavItem eventKey="administration">
+          <NavItem eventKey="admin">
             <NavIcon>
               <i
                 className="fa far-regular fa-lock"
@@ -55,7 +55,7 @@ export default function SideNavbar() {
           </NavItem>
           <br />
 
-          <NavItem eventKey="logout">
+          <NavItem eventKey="">
             <NavIcon>
               <i
                 className="fa-solid fa-arrow-right-from-bracket"
