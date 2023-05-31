@@ -1,12 +1,12 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
-import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
+import Modal from "react-bootstrap/Modal";
+import Form from "react-bootstrap/Form";
 
 export default function ModalTicket() {
-    const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   return (
     <>
       <Button

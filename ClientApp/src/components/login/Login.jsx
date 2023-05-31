@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import styles from "./login.module.css";
 import bug from "../assets/bug.png";
 import Button from "react-bootstrap/Button";
-import {db} from "../fakedb/db.js"
-import { useNavigate } from 'react-router-dom';
+import { db } from "../fakedb/db.js";
+import { useNavigate } from "react-router-dom";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
   const [account, setAccount] = useState("signup");
@@ -17,7 +17,8 @@ function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    localStorage.removeItem('name')
+    localStorage.removeItem("name");
+    localStorage.removeItem("role");
   }, []);
 
   const handleChange = () => {
@@ -26,13 +27,15 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const emails = db.filter(e => e.email === email)
-  
+    const emails = db.filter((e) => e.email === email);
+
     if (emails.length > 0) {
       const name = emails[0].name;
+      const role = emails[0].role;
       localStorage.setItem("name", name);
-  
-      toast.success('Logged in successfully', {
+      localStorage.setItem("role", role);
+
+      toast.success("Logged in successfully", {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: false,
@@ -42,17 +45,16 @@ function Login() {
         progress: undefined,
         theme: "light",
       });
-  
-      setTimeout(() => {
-        navigate('/home')
-      }, 3000);
-  
-    } else {
-      alert("this email doesn't exist!")
-    }
-  }
 
-  console.log(db)
+      setTimeout(() => {
+        navigate("/home");
+      }, 3000);
+    } else {
+      alert("this email doesn't exist!");
+    }
+  };
+
+  console.log(db);
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -60,17 +62,15 @@ function Login() {
       id: db.length + 1,
       name: name,
       email: email,
-      password: password
+      password: password,
+    };
 
-    }
-
-    
     db.push(schema);
     setName("");
     setEmail("");
     setPassword("");
 
-    toast.success('Signed up successfuly!', {
+    toast.success("Signed up successfuly!", {
       position: "top-center",
       autoClose: 2000,
       hideProgressBar: false,
@@ -79,22 +79,20 @@ function Login() {
       draggable: true,
       progress: undefined,
       theme: "light",
-   
-      });
+    });
 
-      setTimeout(() => {
-        setAccount("signup")
-        }, 3000);
+    setTimeout(() => {
+      setAccount("signup");
+    }, 3000);
 
-    console.log("success")
-    console.log(db[db.length - 1])
-  }
+    console.log("success");
+    console.log(db[db.length - 1]);
+  };
 
   if (account === "signup") {
     return (
       <>
-
-          <ToastContainer
+        <ToastContainer
           position="top-center"
           autoClose={2000}
           hideProgressBar={false}
@@ -105,30 +103,39 @@ function Login() {
           draggable
           pauseOnHover
           theme="light"
-          />
-
-
-
+        />
 
         <div className={styles.mainPage}>
+        <div className={styles.loginContainer}>
           <form onSubmit={handleLogin} className={styles.loginForm}>
-    
             <div className={styles.titles}>
-            <img style={{top:0, width:"30%"}} src={bug} />
+              <img style={{ top: 0, width: "30%" }} src={bug} />
               <h4 className="mt-1 mb-5 pb-1">BUGTRACKER APP.</h4>
-              
             </div>
             <p>Please login to your account</p>
             <div className={styles.content}>
               <div className={styles.field}>
-            
-                <input placeholder="Email" onChange={e => setEmail(e.target.value)} value={email} type="email" />
+                <input
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                  type="email"
+                />
               </div>
               <div className={styles.field}>
-              
-                <input placeholder="Password" onChange={e => setPassword(e.target.value)} value={password} type="password" />
+                <input
+                  placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                  type="password"
+                />
 
-                <Button className="mt-5" style={{backgroundColor:"rgba(255, 118, 48, 1)"}} variant="danger" type="submit">
+                <Button
+                  className="mt-5"
+                  style={{ backgroundColor: "rgba(255, 118, 48, 1)" }}
+                  variant="danger"
+                  type="submit"
+                >
                   Submit
                 </Button>
               </div>
@@ -140,51 +147,72 @@ function Login() {
                 Sign up.
               </a>
             </p>
-          </form>
+          </form></div>
         </div>
       </>
     );
   }
   return (
     <>
-
       <ToastContainer
-                position="top-center"
-                autoClose={2000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="light"
-                />
-    
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
+      
       <div className={styles.mainPage}>
+      <div className={styles.loginContainer}>
         <form onSubmit={handleSignup} className={styles.loginForm}>
           <div className={styles.titles}>
-          <img style={{top:0, width:"30%"}} src={bug} />
-          <h4 className="mt-1 mb-5 pb-1">BUGTRACKER APP.</h4>
+            <img style={{ top: 0, width: "30%" }} src={bug} />
+            <h4 className="mt-1 mb-5 pb-1">BUGTRACKER APP.</h4>
           </div>
           <div className={styles.content}>
             <div className={styles.field}>
-            <p>Please enter your credentials</p>
-                <input placeholder="Name" onChange={e => setName(e.target.value)}  value={name} type="text" />
-              </div>
-            <div className={styles.field}>
-        
-              <input placeholder="Age" onChange={e => setAge(e.target.value)} value={age} type="date" />
+              <p>Please enter your credentials</p>
+              <input
+                placeholder="Name"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+                type="text"
+              />
             </div>
             <div className={styles.field}>
-              
-              <input placeholder="Email" onChange={e => setEmail(e.target.value)} value={email} type="email" />
+              <input
+                placeholder="Age"
+                onChange={(e) => setAge(e.target.value)}
+                value={age}
+                type="date"
+              />
             </div>
             <div className={styles.field}>
-            
-              <input placeholder="Password" onChange={e => setPassword(e.target.value)} value={password} type="password" />
+              <input
+                placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                type="email"
+              />
+            </div>
+            <div className={styles.field}>
+              <input
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+                type="password"
+              />
 
-              <Button style={{backgroundColor: '#FF7630'}}  className="mt-5" type="submit">
+              <Button
+                style={{ backgroundColor: "#FF7630" }}
+                className="mt-5"
+                type="submit"
+              >
                 Submit
               </Button>
             </div>
@@ -196,7 +224,8 @@ function Login() {
               Sign in.
             </a>
           </p>
-        </form>
+        </form> 
+        </div>
       </div>
     </>
   );

@@ -4,22 +4,19 @@ import SideNavbar from "../../components/sideNav/SideNavbar.jsx";
 import TicketList from "../../components/ticketList/TicketList.jsx";
 import PieCharts from "../../components/pieCharts/PieCharts.tsx";
 import Footer from "../../components/footer/Footer.jsx";
-import InfoCard from '../../components/infoCard/InfoCard.jsx';
+import InfoCard from "../../components/infoCard/InfoCard.jsx";
 
-import ModalTicket from "../modalTicket/ModalTicket.jsx";
+import ModalTeam from "../modalTeam/ModalTeam.jsx";
 import ModalProject from "../modalProject/ModalProject.jsx";
-import ProjectList from "../projectList/ProjectList.jsx"
-import {ticketData} from "../fakedb/db.js"
-import TeamTable from "../teamTable/TeamTable.jsx"
+import ProjectList from "../projectList/ProjectList.jsx";
+import { ticketData } from "../fakedb/db.js";
+import TeamTable from "../teamTable/TeamTable.jsx";
 
 import styles from "./ticket.module.css";
 import Table from "react-bootstrap/Table";
 
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-
-
-
 
 import {
   MDBCard,
@@ -40,12 +37,10 @@ export default function Ticket() {
 
   const handleToggle = () => {
     if (show === false) {
-      return setShow(true)
+      return setShow(true);
     }
-    setShow(prevShow => !prevShow);
-
+    setShow((prevShow) => !prevShow);
   };
-
 
   const [tickets, setTickets] = useState(null);
 
@@ -57,8 +52,7 @@ export default function Ticket() {
     getTickets();
   }, []);
 
-
-  if (!tickets) return null; 
+  if (!tickets) return null;
 
   return (
     <div>
@@ -67,42 +61,51 @@ export default function Ticket() {
       <div className={styles.contentWrapper}>
         <MDBContainer>
           <MDBRow>
-          {/* -------------------------- upper row ----------------------------  */}
+            {/* -------------------------- upper row ----------------------------  */}
             <MDBCol size="3">
-            <div style={{position: 'relative', marginTop: '-4rem'}}>
-
-              <ModalTicket />
-              <div className="mt-3">
-                <TeamTable />
+              <div style={{ position: "relative", marginTop: "-4rem" }}>
+                <ModalTeam />
+                <div className="mt-3">
+                  <TeamTable />
+                </div>
               </div>
-             </div> 
             </MDBCol>
 
             <MDBCol size="1"></MDBCol>
 
             <MDBCol size="8">
-              <ProjectList buttonAction={
-                                  {
-                    columns: tickets.columns,
-                    rows: tickets.rows.map(row => ({
-                      ...row,
-                      info: <center><button style={{backgroundColor: '#FF7630'}} onClick={handleToggle} className="btn btn-primary">. . .</button></center>,
-                    }))
-                  }
-              } className="bg-white" title="Project's ticket list" />
+              <ProjectList
+                buttonAction={{
+                  columns: tickets.columns,
+                  rows: tickets.rows.map((row) => ({
+                    ...row,
+                    info: (
+                      <center>
+                        <button
+                          onClick={handleToggle}
+                          className="btn btn-link"
+                          style={{color: '#FF7630'}}
+                        >
+                          . . .
+                        </button>
+                      </center>
+                    ),
+                  })),
+                }}
+                className="bg-white"
+                title="Project's ticket list"
+              />
             </MDBCol>
 
-          {/* -------------------------- lower row ----------------------------  */}
+            {/* -------------------------- lower row ----------------------------  */}
 
             <MDBCol className="mt-5" size="12">
               {show && <InfoCard show={show} onHide={handleClose} />}
-
             </MDBCol>
- 
-              </MDBRow>
-            </MDBContainer>
-          </div>
-          <Footer />
-        </div>
-      );
+          </MDBRow>
+        </MDBContainer>
+      </div>
+      <Footer />
+    </div>
+  );
 }

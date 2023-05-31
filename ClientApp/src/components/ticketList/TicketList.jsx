@@ -1,14 +1,14 @@
 import Table from "react-bootstrap/Table";
 import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
-import {projectData} from "../fakedb/db.js";
+import { projectData } from "../fakedb/db.js";
 
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 
-import styles from './ticketList.module.css';
+import styles from "./ticketList.module.css";
 
-import { MDBDataTable, MDBBtn } from 'mdbreact';
+import { MDBDataTable, MDBBtn } from "mdbreact";
 
 function TicketList() {
   const [projects, setProjects] = useState([]);
@@ -55,24 +55,25 @@ function TicketList() {
   }
 
   return (
-    <div style={{postition:"relative", zIndex:1}}>
-    <center><h1>Ticket list</h1></center>
-        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-            <Button variant="primary" onClick={handleShow}>
-                Create new
-            </Button>
-        </div>
-        <MDBDataTable
-          className={styles.myCustomTable}
-          scrollY
-          maxHeight="200px"
-          maxWidth="200px"
-          striped
-          bordered
-          small
-          data={projectData}
-        />
-
+    <div style={{ postition: "relative", zIndex: 1 }}>
+      <center>
+        <h1>Ticket list</h1>
+      </center>
+      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+        <Button variant="primary" onClick={handleShow}>
+          Create new
+        </Button>
+      </div>
+      <MDBDataTable
+        className={styles.myCustomTable}
+        scrollY
+        maxHeight="200px"
+        maxWidth="200px"
+        striped
+        bordered
+        small
+        data={projectData}
+      />
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
