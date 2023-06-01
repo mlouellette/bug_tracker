@@ -25,6 +25,7 @@ export default function ModalProject() {
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               <Form.Label>Project Name</Form.Label>
               <Form.Control
+                className="selectFocus"
                 type="text"
                 placeholder="Enter project name"
                 autoFocus
@@ -35,16 +36,23 @@ export default function ModalProject() {
               controlId="exampleForm.ControlTextarea1"
             >
               <Form.Label>Project Description</Form.Label>
-              <Form.Control as="textarea" rows={3} />
+              <Form.Control className="selectFocus" as="textarea" rows={3} />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+        <Button
+            style={{ color: "#FF7630" }}
+            variant="light"
+            onClick={handleClose}
+          >
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Create Project
+          <Button
+            style={{ backgroundColor: "#FF7630", float: "right" }}
+            onClick={handleClose}
+          >
+            Confirm
           </Button>
         </Modal.Footer>
       </Modal>

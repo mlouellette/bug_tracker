@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "./login.module.css";
+import "./login.css";
 import bug from "../assets/bug.png";
 import Button from "react-bootstrap/Button";
 import { db } from "../fakedb/db.js";
@@ -105,16 +105,16 @@ function Login() {
           theme="light"
         />
 
-        <div className={styles.mainPage}>
-        <div className={styles.loginContainer}>
-          <form onSubmit={handleLogin} className={styles.loginForm}>
-            <div className={styles.titles}>
+        <div className="mainPage">
+        <div className="loginContainer">
+          <form onSubmit={handleLogin} className="loginForm">
+            <div className="titles">
               <img style={{ top: 0, width: "30%" }} src={bug} />
               <h4 className="mt-1 mb-5 pb-1">BUGTRACKER APP.</h4>
             </div>
             <p>Please login to your account</p>
-            <div className={styles.content}>
-              <div className={styles.field}>
+            <div className="content">
+              <div className="field">
                 <input
                   placeholder="Email"
                   onChange={(e) => setEmail(e.target.value)}
@@ -122,7 +122,7 @@ function Login() {
                   type="email"
                 />
               </div>
-              <div className={styles.field}>
+              <div className="field">
                 <input
                   placeholder="Password"
                   onChange={(e) => setPassword(e.target.value)}
@@ -167,15 +167,15 @@ function Login() {
         theme="light"
       />
       
-      <div className={styles.mainPage}>
-      <div className={styles.loginContainer}>
-        <form onSubmit={handleSignup} className={styles.loginForm}>
-          <div className={styles.titles}>
+      <div className="mainPage">
+      <div className="loginContainer">
+        <form onSubmit={handleSignup} className="loginForm">
+          <div className="titles">
             <img style={{ top: 0, width: "30%" }} src={bug} />
             <h4 className="mt-1 mb-5 pb-1">BUGTRACKER APP.</h4>
           </div>
-          <div className={styles.content}>
-            <div className={styles.field}>
+          <div className="content">
+            <div className="field">
               <p>Please enter your credentials</p>
               <input
                 placeholder="Name"
@@ -184,7 +184,7 @@ function Login() {
                 type="text"
               />
             </div>
-            <div className={styles.field}>
+            <div className="field">
               <input
                 placeholder="Age"
                 onChange={(e) => setAge(e.target.value)}
@@ -192,7 +192,7 @@ function Login() {
                 type="date"
               />
             </div>
-            <div className={styles.field}>
+            <div className="field">
               <input
                 placeholder="Email"
                 onChange={(e) => setEmail(e.target.value)}
@@ -200,7 +200,7 @@ function Login() {
                 type="email"
               />
             </div>
-            <div className={styles.field}>
+            <div className="field">
               <input
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}

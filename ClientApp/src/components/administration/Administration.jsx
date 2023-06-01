@@ -6,7 +6,7 @@ import Footer from "../../components/footer/Footer.jsx";
 
 import { ticketData } from "../fakedb/db.js";
 
-import styles from "./admin.module.css";
+import "./admin.css";
 import Table from "react-bootstrap/Table";
 
 import Form from "react-bootstrap/Form";
@@ -62,11 +62,12 @@ export default function Administration() {
   if (!tickets) return null;
 
   return (
+    <>
     <div>
       <TopNav />
-      <SideNavbar className={styles.sideNavbar} />
-      <div className={styles.contentWrapper}>
-        <MDBContainer>
+      <SideNavbar className="sideNavbar" />
+      <div className="contentWrapper">
+        <MDBContainer className="tfadeIn">
           <MDBRow>
             {/* -------------------------- upper row ----------------------------  */}
             <MDBCol size="5">
@@ -182,7 +183,7 @@ export default function Administration() {
           </MDBRow>
         </MDBContainer>
       </div>
-      <Footer />
+ 
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -198,7 +199,7 @@ export default function Administration() {
             Close
           </Button>
           <Button
-            style={{ backgroundColor: "#383838", float: "right" }}
+            style={{ backgroundColor: "#FF7630", float: "right" }}
             onClick={handleClose}
           >
             Save Changes
@@ -206,5 +207,7 @@ export default function Administration() {
         </Modal.Footer>
       </Modal>
     </div>
+    <Footer />
+    </>
   );
 }

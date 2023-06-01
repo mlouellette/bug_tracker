@@ -1,0 +1,16 @@
+.contentWrapper {
+    position: relative;
+    margin-top: -11.5rem; 
+  }
+
+.tfadeIn {
+    animation: fadeIn 0.5s;
+  }
+  
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+  
+  
+  

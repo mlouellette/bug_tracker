@@ -91,7 +91,7 @@ export const priority = {
 
 export default function PieCharts() {
     return (
-    <div style={{maxHeight:"1%"}}>
+      <div style={{position: "relative", maxHeight:"1%", zIndex: 99}}>
         <Card>
         <Card.Header style={{backgroundColor: '#FF7630'}} className="text-light bg-gradient">Tickets by Type</Card.Header>
         <Card.Body>

@@ -31,7 +31,8 @@ export default function Home() {
   if (!projects) return null;
 
   return (
-    <div>
+    <>
+    <div className="pb-5">
       <TopNav user={"Allo"} />
       <SideNavbar className={styles.sideNavbar} />
       <div className={styles.contentWrapper}>
@@ -75,7 +76,8 @@ export default function Home() {
         </MDBContainer>
       </div>
 
-      <Footer />
     </div>
+    <Footer />
+    </>
   );
 }

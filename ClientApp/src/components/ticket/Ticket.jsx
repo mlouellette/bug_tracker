@@ -55,7 +55,8 @@ export default function Ticket() {
   if (!tickets) return null;
 
   return (
-    <div>
+    <>
+    <div className="pb-5">
       <TopNav />
       <SideNavbar className={styles.sideNavbar} />
       <div className={styles.contentWrapper}>
@@ -105,7 +106,9 @@ export default function Ticket() {
           </MDBRow>
         </MDBContainer>
       </div>
-      <Footer />
+    
     </div>
+    <Footer />
+    </>
   );
 }

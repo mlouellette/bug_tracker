@@ -3,6 +3,8 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { db } from "../fakedb/db.js";
+import './modalTeam.css'
+
 
 export default function ModalTeam() {
   const [show, setShow] = useState(false);
@@ -26,7 +28,7 @@ export default function ModalTeam() {
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              <Form.Select aria-label="Default select example">
+              <Form.Select className="selectFocus" aria-label="Default select example">
                 <option>- Select member -</option>
                 {db.map((m) => (
                   <option
@@ -42,10 +44,17 @@ export default function ModalTeam() {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+        <Button
+            style={{ color: "#FF7630" }}
+            variant="light"
+            onClick={handleClose}
+          >
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button
+            style={{ backgroundColor: "#FF7630", float: "right" }}
+            onClick={handleClose}
+          >
             Confirm
           </Button>
         </Modal.Footer>

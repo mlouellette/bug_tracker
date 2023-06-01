@@ -41,6 +41,7 @@ export default function UserTicket() {
   if (!tickets) return null;
 
   return (
+    <>
     <div>
       <TopNav />
       <SideNavbar className={styles.sideNavbar} />
@@ -82,8 +83,11 @@ export default function UserTicket() {
         </MDBContainer>
       </div>
       <div style={{ bottom: -600 }}>
-        <Footer />
+   
       </div>
+     
     </div>
+    <Footer />
+    </>
   );
 }

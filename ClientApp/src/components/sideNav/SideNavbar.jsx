@@ -6,7 +6,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import SideNav, { NavItem, NavIcon, NavText } from "@trendmicro/react-sidenav";
-
 import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 
 export default function SideNavbar() {

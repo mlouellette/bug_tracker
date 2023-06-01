@@ -1,9 +1,10 @@
-import Table from "react-bootstrap/Table";
+
 import { projectData } from "../fakedb/db.js";
 import React, { useEffect, useState } from "react";
-import ModalProject from "../modalProject/ModalProject.jsx";
+
 import { useNavigate } from "react-router-dom";
-import { MDBDataTable, MDBBtn } from "mdbreact";
+import { MDBDataTable, MDBBtn, MDBAnimation } from "mdbreact";
+import "./projectList.css"
 
 function ProjectList(props) {
   const [projects, setProjects] = useState(null);
@@ -28,7 +29,7 @@ function ProjectList(props) {
   if (!projects) return null; // or a loading spinner
 
   return (
-    <div>
+    <div className="projectListContainer">
       <center>
         <h2 style={{ color: "#292929" }}>{props.title}</h2>
       </center>
@@ -36,7 +37,9 @@ function ProjectList(props) {
         {/* <ModalProject /> */}
       </div>
       <div>
+
         <MDBDataTable
+          className="fade-in"
           responsive
           striped
           bordered
@@ -45,6 +48,7 @@ function ProjectList(props) {
           style={{ backgroundColor: "white" }}
         />
       </div>
+
     </div>
   );
 }
