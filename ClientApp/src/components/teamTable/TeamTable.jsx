@@ -52,7 +52,7 @@ export default function TeamTable() {
             Close
           </Button>
           <Button
-            style={{ backgroundColor: "#383838", float: "right" }}
+            style={{ backgroundColor: "#FF7630", float: "right" }}
             onClick={handleClose}
           >
             Confirm
