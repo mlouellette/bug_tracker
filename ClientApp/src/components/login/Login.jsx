@@ -5,6 +5,8 @@ import Button from "react-bootstrap/Button";
 import { db } from "../fakedb/db.js";
 import { useNavigate } from "react-router-dom";
 
+import Alert from 'react-bootstrap/Alert';
+
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -14,6 +16,9 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [age, setAge] = useState("");
+  const [showAlert, setShowAlert] = useState(false);
+  const [show, setShow] = useState(false);
+  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,13 +33,13 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     const emails = db.filter((e) => e.email === email);
-
+  
     if (emails.length > 0) {
       const name = emails[0].name;
       const role = emails[0].role;
       localStorage.setItem("name", name);
       localStorage.setItem("role", role);
-
+  
       toast.success("Logged in successfully", {
         position: "top-center",
         autoClose: 2000,
@@ -45,12 +50,14 @@ function Login() {
         progress: undefined,
         theme: "light",
       });
-
+      setShow(false)  
       setTimeout(() => {
         navigate("/home");
       }, 3000);
     } else {
-      alert("this email doesn't exist!");
+      setError("Invalid email or password.");
+      setShow(true);
+
     }
   };
 
@@ -129,7 +136,12 @@ function Login() {
                   value={password}
                   type="password"
                 />
-
+               
+              <div className="pt-3">
+                {show && <Alert  variant="danger" onClose={() => setShow(false)}>
+                  <Alert.Heading>{error}</Alert.Heading>
+                </Alert> }
+              </div>
                 <Button
                   className="mt-5"
                   style={{ backgroundColor: "rgba(255, 118, 48, 1)" }}
@@ -207,6 +219,12 @@ function Login() {
                 value={password}
                 type="password"
               />
+
+            <div className="pt-3">
+                {show && <Alert  variant="danger" onClose={() => setShow(false)}>
+                  <Alert.Heading>{error}</Alert.Heading>
+                </Alert> }
+              </div>
 
               <Button
                 style={{ backgroundColor: "#FF7630" }}

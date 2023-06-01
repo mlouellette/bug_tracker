@@ -5,7 +5,7 @@ import { db } from '../fakedb/db.js';
 
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-
+import "./pieCharts.css"
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -91,7 +91,7 @@ export const priority = {
 
 export default function PieCharts() {
     return (
-      <div style={{position: "relative", maxHeight:"1%", zIndex: 99}}>
+      <div className="pieChartsContainer" style={{position: "relative", maxHeight:"1%", zIndex: 99}}>
         <Card>
         <Card.Header style={{backgroundColor: '#FF7630'}} className="text-light bg-gradient">Tickets by Type</Card.Header>
         <Card.Body>

@@ -68,8 +68,8 @@ export default function Administration() {
       <SideNavbar className="sideNavbar" />
       <div className="contentWrapper">
         <MDBContainer className="tfadeIn">
-          <MDBRow>
-            {/* -------------------------- upper row ----------------------------  */}
+          <MDBRow className="responsiveFlex">
+  
             <MDBCol size="5">
               <Card>
                 <Card.Body>

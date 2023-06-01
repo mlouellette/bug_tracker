@@ -37,7 +37,7 @@ export default function Home() {
       <SideNavbar className={styles.sideNavbar} />
       <div className={styles.contentWrapper}>
         <MDBContainer>
-          <MDBRow>
+          <MDBRow className={styles.centerOnMobile}>
             <MDBCol size="3" className={styles.pieChartsContainer}>
               <PieCharts />
             </MDBCol>

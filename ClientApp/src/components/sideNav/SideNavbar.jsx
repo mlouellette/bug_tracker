@@ -11,7 +11,7 @@ import "@trendmicro/react-sidenav/dist/react-sidenav.css";
 export default function SideNavbar() {
   const navigate = useNavigate();
   return (
-    <div>
+    <div className="sideNavContainer">
       <SideNav
         className="sidenav"
         onSelect={(selected) => {
@@ -67,7 +67,7 @@ export default function SideNavbar() {
                 style={{ color: "white", fontSize: "1.5em" }}
               ></i>
             </NavIcon>
-            <NavText>Tickets</NavText>
+            <NavText>My Tickets</NavText>
           </NavItem>
 
           {localStorage.getItem("role") === "admin" && (
