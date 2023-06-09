@@ -6,6 +6,13 @@
 .tfadeIn {
     animation: fadeIn 0.5s;
   }
+
+.adminWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
   
 @keyframes fadeIn {
     0% {opacity: 0;}
@@ -24,4 +31,5 @@
       width: 100%;
     }
   }
+
   

@@ -4,7 +4,7 @@ import SideNavbar from "../../components/sideNav/SideNavbar.jsx";
 import Footer from "../../components/footer/Footer.jsx";
 import ProjectList from "../projectList/ProjectList.jsx";
 import { ticketData } from "../fakedb/db.js";
-import styles from "./userTicket.module.css";
+import "./userTicket.css";
 import { useNavigate } from "react-router-dom";
 
 import {
@@ -31,6 +31,11 @@ export default function UserTicket() {
   const [tickets, setTickets] = useState(null);
 
   useEffect(() => {
+    if (!localStorage.getItem("name")) {
+      return navigate("/");
+    }
+
+
     function getTickets() {
       setTickets(ticketData);
     }
@@ -41,11 +46,11 @@ export default function UserTicket() {
   if (!tickets) return null;
 
   return (
-    <>
+    <div className="userTicketWrapper">
     <div>
       <TopNav />
-      <SideNavbar className={styles.sideNavbar} />
-      <div className={styles.contentWrapper}>
+      <SideNavbar className="sideNavbar" />
+      <div className="contentWrapper">
         <MDBContainer>
           <MDBRow>
             <MDBCol size="12">
@@ -88,6 +93,6 @@ export default function UserTicket() {
      
     </div>
     <Footer />
-    </>
+    </ div>
   );
 }

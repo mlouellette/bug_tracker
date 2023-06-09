@@ -66,12 +66,10 @@ export default function InfoCard() {
                       className="rounded me-2"
                       alt=""
                     />
-                    <strong className="me-auto">Bootstrap</strong>
+                    <strong className="me-auto">User</strong>
                     <small>11 mins ago</small>
                   </Toast.Header>
-                  <Toast.Body>
-                    Hello, world! This is a toast message.
-                  </Toast.Body>
+                  <Toast.Body>Hello, this is my message!</Toast.Body>
                 </Toast>
 
                 <Toast>
@@ -81,12 +79,10 @@ export default function InfoCard() {
                       className="rounded me-2"
                       alt=""
                     />
-                    <strong className="me-auto">Bootstrap</strong>
+                    <strong className="me-auto">User</strong>
                     <small>11 mins ago</small>
                   </Toast.Header>
-                  <Toast.Body>
-                    Hello, world! This is a toast message.
-                  </Toast.Body>
+                  <Toast.Body>Hello, this is my message!</Toast.Body>
                 </Toast>
 
                 <Toast>
@@ -96,12 +92,10 @@ export default function InfoCard() {
                       className="rounded me-2"
                       alt=""
                     />
-                    <strong className="me-auto">Bootstrap</strong>
+                    <strong className="me-auto">User</strong>
                     <small>11 mins ago</small>
                   </Toast.Header>
-                  <Toast.Body>
-                    Hello, world! This is a toast message.
-                  </Toast.Body>
+                  <Toast.Body>Hello, this is my message!</Toast.Body>
                 </Toast>
 
                 <Toast>
@@ -111,12 +105,10 @@ export default function InfoCard() {
                       className="rounded me-2"
                       alt=""
                     />
-                    <strong className="me-auto">Bootstrap</strong>
+                    <strong className="me-auto">User</strong>
                     <small>11 mins ago</small>
                   </Toast.Header>
-                  <Toast.Body>
-                    Hello, world! This is a toast message.
-                  </Toast.Body>
+                  <Toast.Body>Hello, this is my message!</Toast.Body>
                 </Toast>
 
                 <Toast>
@@ -126,12 +118,10 @@ export default function InfoCard() {
                       className="rounded me-2"
                       alt=""
                     />
-                    <strong className="me-auto">Bootstrap</strong>
+                    <strong className="me-auto">User</strong>
                     <small>11 mins ago</small>
                   </Toast.Header>
-                  <Toast.Body>
-                    Hello, world! This is a toast message.
-                  </Toast.Body>
+                  <Toast.Body>Hello, this is my message!</Toast.Body>
                 </Toast>
               </ToastContainer>
             </div>
