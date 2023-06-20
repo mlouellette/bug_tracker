@@ -153,12 +153,17 @@ function Login() {
               </div>
             </div>
 
+
+
             <p>
               Don't have an account?{" "}
               <a className="link-warning" onClick={handleChange}>
                 Sign up.
               </a>
             </p>
+          <p>Demo admin: admin@email.com<br/>
+          Demo developer: dev@email.com<br/>
+          password: enter something random</p>
           </form></div>
         </div>
       </>
